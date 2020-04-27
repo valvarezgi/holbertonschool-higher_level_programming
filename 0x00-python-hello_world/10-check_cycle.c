@@ -26,6 +26,10 @@ int check_cycle(listint_t *list)
 
 		else
 			return (0);
+		if (traverse->next)
+			traverse = traverse->next;
+		else
+			return(0);
 	}
 	return (0);
 }
