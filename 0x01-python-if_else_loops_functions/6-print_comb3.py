@@ -4,4 +4,4 @@ for tens in range(0, 9):
         if tens == 8 and units == 9:
             print("{}{}".format(tens, units))
         else:
-            print("{}{},".format(tens, units), end="")
+            print("{:d}{:d},".format(tens, units), end="")
