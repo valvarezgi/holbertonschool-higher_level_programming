@@ -5,4 +5,3 @@ for tens in range(0, 9):
             print("{}{}".format(tens, units))
         else:
             print("{}{},".format(tens, units), end="")
-            
