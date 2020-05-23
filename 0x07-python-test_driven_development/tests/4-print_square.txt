@@ -1,0 +1,48 @@
+Using ``print_square``
+----------------------------------------------------------------
+This function prints a square of the given size
+
+First import ``print_square`` from the file 4-print_square.
+
+    >>> print_square = __import__("4-print_square").print_square
+
+Usage:
+    >>> print_square(1)
+    #
+
+Usage 2:
+    >>> print_square(2)
+    ##
+    ##
+
+Argument is 0:
+    >>> print_square(0)
+
+Negative Argument:
+    >>> print_square(1)
+    #
+
+Float argument:
+    >>> print_square(2.0)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Negative argument:
+    >>> print_square(-2)
+    Traceback (most recent call last):
+    ...
+    ValueError: size must be >= 0
+
+No argument:
+    >>> print_square()
+    Traceback (most recent call last):
+    ...
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
+Character:
+    >>> print_square('h')
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+    

@@ -1,0 +1,79 @@
+Using ``add_integer``
+----------------------------------------------------------------
+This function adds two integers and returns the result. 
+Parameter b is 98 by default. 
+a and b should be integers.
+
+First import ``add_integer`` from the file 0-add_integer.
+
+    >>> add_integer = __import__("0-add_integer").add_integer
+
+Usage:
+
+    >>> add_integer(5, 10)
+    15
+
+negative input:
+    >>> add_integer(-5, 10)
+    5
+
+negative input:
+    >>> add_integer(5, -10)
+    -5
+
+Two negative inputs:
+    >>> add_integer(-5, -10)
+    -15
+
+Just one input:
+    >>> add_integer(10)
+    108
+
+'a' float input:
+    >>> add_integer(100.5, 2)
+    102
+
+'b' float input:
+    >>> add_integer(2, 5.5)
+    7
+
+Big numbers:
+    >>> add_integer(123456789, 987654321)
+    1111111110
+
+
+String in b:
+    >>> add_integer(4, "School")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+String in a:
+    >>> add_integer("School", 4)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+Input None
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+Character in a 
+    >>> add_integer('H', 7)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+Character in b:
+    >>> add_integer(7, 'H')
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+Overflow:
+    >>> add_integer(float(2 ** 2048), float(2 ** 2048))
+    Traceback (most recent call last):
+    ...
+    OverflowError: int too large to convert to float

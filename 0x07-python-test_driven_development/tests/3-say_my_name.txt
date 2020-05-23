@@ -1,0 +1,46 @@
+Using ``say_my_name``
+----------------------------------------------------------------
+This function prints "My name is <first name> <last name>"
+First checks if parameters are strings, then prints.
+
+First import ``say_my_name`` from the file 3-say_my_name.
+
+    >>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Usage:
+    >>> say_my_name("Valeria", "Alvarez")
+    My name is Valeria Alvarez
+
+One parameter str given:
+    >>> say_my_name("Vale")
+    My name is Vale 
+
+One parameter non string given:
+    >>> say_my_name(1)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Parameters differents from string:
+    >>> say_my_name(1, 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+No inputs given:
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+Fist parameter is a string the other one a number:
+    >>> say_my_name("Valeria", 123)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+Second parameter is a string the other one a number:
+    >>> say_my_name(123, "Vale")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
