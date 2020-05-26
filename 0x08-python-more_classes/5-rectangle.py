@@ -115,4 +115,4 @@ class Rectangle:
     def __del__(self):
         """__del__ deletes an instance
         """
-        print("By rectangle...")
+        print("Bye rectangle...")
