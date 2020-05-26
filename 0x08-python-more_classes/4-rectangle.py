@@ -110,4 +110,4 @@ class Rectangle:
         Returns:
             str: string representation of the rectangle
         """
-        return "Rectangle ({}, {})".format(self.width, self.height)
+        return "Rectangle({:d}, {:d})".format(self.width, self.height)
