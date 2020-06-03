@@ -1,22 +1,18 @@
 #!/usr/bin/python3
+""" add_item
+"""
 
-from sys import argv
+import sys
 
 save_to_json_file = __import__("7-save_to_json_file").save_to_json_file
 load_from_json_file = __import__("8-load_from_json_file").load_from_json_file
 
-list_json = []
-
 try:
     list_json = load_from_json_file("add_item.json")
-    for i in list_json:
-        list_json.append(i)
+except FileNotFoundError:
+    list_json = []
 
-except:
-    pass
-
-for i in range(len(argv)):
-    if i != 0:
-        list_json.append(argv[i])
-
+argc = len(sys.argv)
+for index in range(1, argc):
+    list_json.append(sys.argv[index])
 save_to_json_file(list_json, "add_item.json")
