@@ -20,5 +20,5 @@ if __name__ == "__main__":
             print(selection.id)
             session.close()
             exit()
-    print("Not found")        
+    print("Not found")
     session.close()
