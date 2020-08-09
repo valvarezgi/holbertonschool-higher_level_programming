@@ -14,8 +14,12 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
 
     session = Session()
-    fil = session.query(State).filter(State.name.like('%a%'))
-    for filt in fil:
-        fil.delete(filt)
-        session.commit()
-        session.close()
+
+    for state in session.query(State).order_by(State.id).all():
+        if 'a' in state.name:
+            fil = session.query(State).filter(State.name.like('%a%'))
+            fil.delete(synchronize_session=False)
+            session.flush()
+            session.commit()
+            session.close()
+    session.close()
