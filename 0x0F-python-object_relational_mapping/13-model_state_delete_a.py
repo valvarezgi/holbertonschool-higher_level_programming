@@ -17,7 +17,5 @@ if __name__ == "__main__":
     fil = session.query(State).filter(State.name.like('%a%'))
     for filt in fil:
         fil.delete(filt)
-        session.flush()
         session.commit()
         session.close()
-    session.close()
