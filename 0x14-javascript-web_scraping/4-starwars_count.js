@@ -1,18 +1,19 @@
 #!/usr/bin/node
 
 const request = require('request');
+const url = process.argv[2];
+let counter = 0;
 
-request(process.argv[2], function (error, response, data) {
-  if (error) {
-    console.log(error);
-  } else {
-    const films = JSON.parse(data).results;
-    let counter = 0;
-    for (let i = 0; i < films.length; i++) {
-      if (films[i].characters.includes('https://swapi.co/api/people/18/')) {
-        counter++;
+request(url, (error, response, data) => {
+  if (!error && response.statusCode === 200) {
+    const completeData = JSON.parse(data);
+    for (const film of completeData.results) {
+      for (const character of film.characters) {
+        if (character.includes('18')) {
+          counter++;
+        }
       }
     }
-    console.log(counter);
   }
+  console.log(counter);
 });
